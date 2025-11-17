@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/AdminServiceCloud/Registry/main/applications.json-schema",
+  "version": "1.0.0",
+  "name": "asc-official-repositories",
+  "description": "Официальный реестр доступных приложений для AdminServiceCloud Runtime",
+  "last_updated": "2025-11-17T00:00:00Z",
+  "applications": [],
+  "repositories": [
+    "system-utilites",
+    "databases",
+    "apps",
+    "game-servers",
+    "web-servers",
+    "bots",
+    "ai-models",
+    "neural-networks",
+    "monitoring-tools",
+    "development-tools",
+    "automation-tools",
+    "security-tools",
+    "logging-tools"
+  ]
+}

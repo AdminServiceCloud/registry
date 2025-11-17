@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/AdminServiceCloud/Registry/main/applications.json-schema",
+  "title": "AdminServiceCloud Applications Registry Schema",
+  "description": "JSON Schema для валидации файла applications.json - центрального реестра доступных приложений для AdminServiceCloud Runtime",
+  "type": "object",
+  "required": ["$schema", "version", "name", "description", "last_updated", "applications", "repositories"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Ссылка на JSON Schema для валидации",
+      "pattern": "^https://json-schema\\.org/draft/2020-12/schema$"
+    },
+    "version": {
+      "type": "string",
+      "description": "Версия формата манифеста",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "examples": ["1.0.0"]
+    },
+    "name": {
+      "type": "string",
+      "description": "Название реестра приложений",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "description": {
+      "type": "string",
+      "description": "Описание реестра приложений",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "last_updated": {
+      "type": "string",
+      "description": "Дата и время последнего обновления в формате ISO 8601",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$",
+      "examples": ["2024-01-01T00:00:00Z"]
+    },
+    "applications": {
+      "type": "array",
+      "description": "Список доступных приложений",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "repository", "repo", "path", "description", "category", "tags"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Уникальный идентификатор приложения (только латинские буквы, цифры, дефисы и подчеркивания)",
+            "pattern": "^[a-z0-9_-]+$",
+            "minLength": 1,
+            "maxLength": 50
+          },
+          "name": {
+            "type": "string",
+            "description": "Название приложения",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "repository": {
+            "type": "string",
+            "description": "Тип репозитория (github, gitlab и т.д.)",
+            "enum": ["github", "gitlab"],
+            "default": "github"
+          },
+          "repo": {
+            "type": "string",
+            "description": "Путь к репозиторию в формате owner/repo",
+            "pattern": "^[a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+$",
+            "minLength": 3,
+            "maxLength": 200
+          },
+          "path": {
+            "type": "string",
+            "description": "Путь к файлу манифеста приложения в репозитории",
+            "minLength": 1,
+            "maxLength": 500,
+            "pattern": "^.+\\.yaml$|^.+\\.yml$"
+          },
+          "description": {
+            "type": "string",
+            "description": "Описание приложения",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "category": {
+            "type": "string",
+            "description": "Категория приложения",
+            "enum": [
+              "web-server",
+              "database",
+              "runtime",
+              "cache",
+              "message-queue",
+              "monitoring",
+              "logging",
+              "security",
+              "development",
+              "automation",
+              "other"
+            ]
+          },
+          "tags": {
+            "type": "array",
+            "description": "Теги для поиска и фильтрации приложений",
+            "minItems": 0,
+            "maxItems": 20,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 50
+            },
+            "uniqueItems": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "uniqueItems": true
+    },
+    "repositories": {
+      "type": "array",
+      "description": "Список других репозиториев",
+      "minItems": 0,
+      "items": {
+        "type": "string",
+        "description": "Название репозитория",
+        "pattern": "^[a-z0-9_-]+$",
+        "minLength": 1,
+        "maxLength": 100
+      },
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}
+
