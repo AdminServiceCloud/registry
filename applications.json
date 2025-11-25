@@ -1,0 +1,21 @@
+{
+  "$schema": "https://raw.githubusercontent.com/AdminServiceCloud/Registry/main/applications.json-schema",
+  "version": "1.0.0",
+  "name": "asc-official-repositories",
+  "description": "Официальный реестр доступных приложений для AdminServiceCloud Runtime",
+  "last_updated": "2025-01-17T00:00:00Z",
+  "applications": [
+    {
+      "id": "helloworld",
+      "name": "Hello World",
+      "repository": "github",
+      "repo": "AdminServiceCloud/asc-example-apps",
+      "path": "helloworld/asc.yaml",
+      "description": "Простое Hello World приложение на Golang для демонстрации работы AdminServiceCloud Runtime",
+      "category": "other",
+      "tags": ["example", "hello-world", "golang"]
+    }
+  ],
+  "repositories": []
+}
+
