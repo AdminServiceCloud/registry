@@ -1,0 +1,52 @@
+{
+  "$schema": "./schema/registry.schema.json",
+  "name": "asc-official",
+  "title": "AdminService.Cloud Official Registry",
+  "description": "Official application registry for the ASC daemon and platform",
+  "format_version": 1,
+  "updated_at": "2026-07-05",
+  "categories": [
+    {
+      "name": "databases",
+      "title": "Databases",
+      "emoji": "🗄️",
+      "description": "Relational and NoSQL databases, caches",
+      "index": "categories/databases.json"
+    },
+    {
+      "name": "ai",
+      "title": "AI Models",
+      "emoji": "🧠",
+      "description": "LLM runtimes, inference servers, AI tools",
+      "index": "categories/ai.json"
+    },
+    {
+      "name": "bots",
+      "title": "Bots",
+      "emoji": "🤖",
+      "description": "Telegram, Discord and other bot frameworks",
+      "index": "categories/bots.json"
+    },
+    {
+      "name": "game-servers",
+      "title": "Game Servers",
+      "emoji": "🎮",
+      "description": "Dedicated game servers",
+      "index": "categories/game-servers.json"
+    },
+    {
+      "name": "system-utilities",
+      "title": "System Utilities",
+      "emoji": "🔧",
+      "description": "Native system tools and utilities (non-Docker)",
+      "index": "categories/system-utilities.json"
+    },
+    {
+      "name": "web",
+      "title": "Web",
+      "emoji": "🌐",
+      "description": "Web servers, CMS, reverse proxies",
+      "index": "categories/web.json"
+    }
+  ]
+}

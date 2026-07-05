@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://registry.adminservice.cloud/schema/asc.settings.schema.json",
+  "title": "ASC Application Settings (asc.settings.yaml)",
+  "description": "Application settings definition referenced from asc.yaml via 'settings: ./asc.settings.yaml'. Users fill these values at install time (platform UI renders a form, CLI asks interactively, silent mode uses defaults).",
+  "type": "object",
+  "required": ["settings"],
+  "properties": {
+    "settings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["key", "type"],
+        "properties": {
+          "key": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_]*$", "description": "Setting identifier" },
+          "type": {
+            "type": "string",
+            "enum": ["string", "number", "boolean", "enum", "secret"],
+            "description": "Setting type; 'secret' values are stored encrypted and masked in UI/logs"
+          },
+          "title": { "type": "string", "description": "Human-readable label (English for public registries)" },
+          "description": { "type": "string", "description": "Help text shown next to the field" },
+          "default": { "description": "Default value; required for silent installs unless 'required' is true" },
+          "required": { "type": "boolean", "default": false },
+          "values": {
+            "type": "array",
+            "items": {},
+            "description": "Allowed values (type: enum)"
+          },
+          "limits": {
+            "type": "object",
+            "description": "Value constraints",
+            "properties": {
+              "min": { "type": "number" },
+              "max": { "type": "number" },
+              "min_length": { "type": "integer" },
+              "max_length": { "type": "integer" },
+              "pattern": { "type": "string", "description": "Regex the value must match (type: string)" }
+            },
+            "additionalProperties": false
+          },
+          "env": { "type": "string", "description": "Environment variable to expose the value as (optional)" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

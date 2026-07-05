@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://registry.adminservice.cloud/schema/registry.schema.json",
+  "title": "ASC Registry Root Index",
+  "description": "Root index of an ASC registry: metadata and links to category index files",
+  "type": "object",
+  "required": ["name", "format_version", "categories"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$",
+      "description": "Unique registry identifier"
+    },
+    "title": { "type": "string", "description": "Human-readable registry title" },
+    "description": { "type": "string", "description": "Registry description (English)" },
+    "format_version": { "type": "integer", "minimum": 1, "description": "Registry format version" },
+    "updated_at": { "type": "string", "format": "date", "description": "Last update date (YYYY-MM-DD)" },
+    "categories": {
+      "type": "array",
+      "description": "Links to category index files (hierarchical: categories may declare children)",
+      "items": {
+        "type": "object",
+        "required": ["name", "index"],
+        "properties": {
+          "name": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$", "description": "Category identifier (databases, ai, bots, game-servers, system-utilities, web, ...)" },
+          "title": { "type": "string", "description": "Human-readable category title" },
+          "emoji": { "type": "string", "description": "Category emoji for UI" },
+          "description": { "type": "string", "description": "Category description (English)" },
+          "index": { "type": "string", "description": "Relative path or URL to the category index file" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

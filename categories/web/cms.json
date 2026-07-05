@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schema/category.schema.json",
+  "category": "web/cms",
+  "children": [],
+  "packages": [
+    {
+      "name": "wordpress",
+      "type": "stack",
+      "title": "WordPress",
+      "description": "WordPress CMS with MySQL database (stack of two apps)",
+      "latest": "6.5.0",
+      "source": {
+        "git": "https://github.com/AdminServiceCloud/asc-example-apps",
+        "path": "wordpress"
+      },
+      "tags": ["cms", "blog", "php"]
+    }
+  ]
+}

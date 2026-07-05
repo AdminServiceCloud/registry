@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://registry.adminservice.cloud/schema/asc.schema.json",
+  "title": "ASC Application Manifest (asc.yaml)",
+  "description": "Manifest of a single ASC application. A package repository must have exactly one asc.yaml OR one asc.stack.yaml at its root.",
+  "type": "object",
+  "required": ["name", "version", "type"],
+  "properties": {
+    "name": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$", "description": "Application name" },
+    "version": { "type": "string", "description": "Application version (semver)" },
+    "type": {
+      "type": "string",
+      "enum": ["docker", "native", "utility"],
+      "description": "How the app runs: docker container, native app (systemd) or system utility"
+    },
+    "title": { "type": "string", "description": "Human-readable title" },
+    "description": { "type": "string", "description": "Description (English for public registries)" },
+    "category": { "type": "string", "description": "Suggested registry category (databases, web, ...)" },
+    "settings": { "type": "string", "description": "Relative path to the app settings file (asc.settings.yaml), see asc.settings.schema.json" },
+    "runtime": {
+      "type": "object",
+      "description": "Runtime definition; fields depend on 'type'",
+      "properties": {
+        "image": { "type": "string", "description": "Docker image (type: docker)" },
+        "install": { "type": "array", "items": { "type": "string" }, "description": "Install commands (type: native/utility)" },
+        "start": { "type": "string", "description": "Start command (type: native)" },
+        "stop": { "type": "string", "description": "Stop command (type: native)" },
+        "uninstall": { "type": "array", "items": { "type": "string" }, "description": "Uninstall commands" }
+      },
+      "additionalProperties": false
+    },
+    "env": {
+      "type": "array",
+      "description": "Environment variables template",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string" },
+          "default": {},
+          "secret": { "type": "boolean", "default": false },
+          "required": { "type": "boolean", "default": false },
+          "description": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "ports": { "type": "array", "items": { "type": "integer" }, "description": "Exposed ports" },
+    "volumes": { "type": "array", "items": { "type": "string" }, "description": "Persistent data paths" },
+    "database": {
+      "type": "object",
+      "description": "Auto-provision a database for this app",
+      "properties": {
+        "engine": { "type": "string", "enum": ["postgresql", "mysql", "mongodb", "redis"] },
+        "env_prefix": { "type": "string", "description": "Prefix for generated credential env vars (e.g. DB_)" }
+      },
+      "additionalProperties": false
+    },
+    "requirements": {
+      "type": "object",
+      "properties": {
+        "ram": { "type": "string", "description": "Minimum RAM (e.g. 256M)" },
+        "disk": { "type": "string", "description": "Minimum disk (e.g. 1G)" },
+        "cpu": { "type": "number", "description": "Minimum CPU cores" }
+      },
+      "additionalProperties": false
+    },
+    "healthcheck": {
+      "type": "object",
+      "properties": {
+        "http": { "type": "string", "description": "HTTP path to probe" },
+        "command": { "type": "string", "description": "Command to run" },
+        "interval": { "type": "string", "default": "30s" }
+      },
+      "additionalProperties": false
+    },
+    "hooks": {
+      "type": "object",
+      "description": "Lifecycle hook commands",
+      "properties": {
+        "pre_backup": { "type": "string" },
+        "post_backup": { "type": "string" },
+        "post_install": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

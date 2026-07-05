@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/category.schema.json",
+  "category": "web",
+  "children": [
+    { "name": "cms", "title": "CMS", "index": "web/cms.json" }
+  ],
+  "packages": [
+    {
+      "name": "nginx",
+      "type": "app",
+      "title": "Nginx",
+      "description": "High-performance web server and reverse proxy",
+      "latest": "1.27.0",
+      "source": {
+        "git": "https://github.com/AdminServiceCloud/asc-example-apps",
+        "path": "nginx"
+      },
+      "tags": ["web-server", "reverse-proxy"]
+    }
+  ]
+}

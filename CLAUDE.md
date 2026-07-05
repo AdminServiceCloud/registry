@@ -1,9 +1,9 @@
 # CLAUDE.md
 
-Документация, roadmap и регламент проекта ведутся централизованно в репозитории `asc-platform` (рядом: `../asc-platform`).
+📖 **Регламент этого репозитория — [AGENTS.md](AGENTS.md)** (обязателен к соблюдению). Общий регламент проекта — [../asc-platform/AGENTS.md](../asc-platform/AGENTS.md).
 
-- 📖 Регламент: [../asc-platform/AGENTS.md](../asc-platform/AGENTS.md)
-- 🎯 Roadmap: [../asc-platform/ROADMAP.md](../asc-platform/ROADMAP.md) — задачи реестра: префикс `REG-*`
-- 📦 Формат реестра: [../asc-daemon/docs/package-manager.md](../asc-daemon/docs/package-manager.md)
+Кратко:
 
-Особенность этого репозитория: **описания пакетов в JSON-файлах — на английском**, остальная документация проекта — на русском. Каталог `old/` — только справка.
+- 🎯 Roadmap: [../asc-platform/ROADMAP.md](../asc-platform/ROADMAP.md) — задачи реестра: префикс `REG-*`.
+- 🗂️ Структура: `registry.json` (корневой индекс) → `categories/<тема>.json` → подкатегории; схемы в `schema/`; типы пакетов `app` и `stack`.
+- 🌍 **Описания в JSON — на английском**, документация репозитория — на русском. Каталог `old/` — только справка.

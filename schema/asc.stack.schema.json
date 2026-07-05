@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://registry.adminservice.cloud/schema/asc.stack.schema.json",
+  "title": "ASC Stack Manifest (asc.stack.yaml)",
+  "description": "Root manifest connecting multiple asc.yaml applications in one repository. A repository may contain many asc.yaml files, but its root must contain exactly one asc.yaml OR one asc.stack.yaml that links them all.",
+  "type": "object",
+  "required": ["name", "version", "apps"],
+  "properties": {
+    "name": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$", "description": "Stack name" },
+    "version": { "type": "string", "description": "Stack version (semver)" },
+    "title": { "type": "string", "description": "Human-readable title" },
+    "description": { "type": "string", "description": "Description (English for public registries)" },
+    "category": { "type": "string", "description": "Suggested registry category" },
+    "apps": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Applications of the stack; each path points to a directory containing an asc.yaml",
+      "items": {
+        "type": "object",
+        "required": ["name", "path"],
+        "properties": {
+          "name": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$", "description": "App name within the stack (install as <stack>/<name>)" },
+          "path": { "type": "string", "description": "Relative path to the directory with the app's asc.yaml" },
+          "optional": { "type": "boolean", "default": false, "description": "Optional component, skipped unless requested" },
+          "depends_on": { "type": "array", "items": { "type": "string" }, "description": "Apps of this stack that must start first" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "env": {
+      "type": "array",
+      "description": "Shared environment variables for all apps of the stack",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string" },
+          "default": {},
+          "secret": { "type": "boolean", "default": false },
+          "description": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

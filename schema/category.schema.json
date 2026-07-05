@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://registry.adminservice.cloud/schema/category.schema.json",
+  "title": "ASC Registry Category Index",
+  "description": "Category index file: packages of this category and links to child category files",
+  "type": "object",
+  "required": ["category", "packages"],
+  "properties": {
+    "category": {
+      "type": "string",
+      "description": "Category path within the registry (e.g. 'web' or 'web/cms')"
+    },
+    "children": {
+      "type": "array",
+      "description": "Links to child category index files (hierarchical structure)",
+      "items": {
+        "type": "object",
+        "required": ["name", "index"],
+        "properties": {
+          "name": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+          "title": { "type": "string" },
+          "index": { "type": "string", "description": "Relative path or URL to the child index file" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "packages": {
+      "type": "array",
+      "description": "Packages of this category",
+      "items": {
+        "type": "object",
+        "required": ["name", "type", "description", "source"],
+        "properties": {
+          "name": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$", "description": "Package name used in 'asc install <name>'" },
+          "type": {
+            "type": "string",
+            "enum": ["app", "stack"],
+            "description": "Package type: 'app' (single asc.yaml) or 'stack' (asc.stack.yaml with multiple apps)"
+          },
+          "title": { "type": "string", "description": "Human-readable package title" },
+          "description": { "type": "string", "description": "Package description (English)" },
+          "latest": { "type": "string", "description": "Latest published version (semver)" },
+          "source": {
+            "type": "object",
+            "description": "Where the package manifest lives",
+            "properties": {
+              "git": { "type": "string", "description": "Git repository URL" },
+              "url": { "type": "string", "description": "Direct HTTPS URL to the manifest directory" },
+              "path": { "type": "string", "description": "Path to the manifest directory inside the repository" }
+            },
+            "additionalProperties": false
+          },
+          "tags": { "type": "array", "items": { "type": "string" }, "description": "Search tags" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
