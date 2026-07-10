@@ -1,0 +1,59 @@
+name: ✨ Registry improvement
+description: Suggest an improvement to the registry format, schemas, or categories
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For adding a new app, use "Request a package" instead.
+        Use this for changes to the registry format, schemas, or category structure.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A clear and concise description of the proposed improvement
+      placeholder: Describe what you would like to change...
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem it solves
+      description: What problem or limitation does this address?
+      placeholder: |
+        e.g. "There is no way to ... because ..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which part of the registry does this affect?
+      options:
+        - Registry format (registry.json)
+        - Category structure
+        - JSON schemas (schema/)
+        - Package metadata fields
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Describe how you envision this working
+      placeholder: |
+        Note: format changes require updating schemas, bumping format_version,
+        and syncing the package-manager doc.
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Any other information that might be useful

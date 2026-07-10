@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Discussions
+    url: https://github.com/AdminServiceCloud/registry/discussions
+    about: Ask questions and join discussions
+  - name: 📦 Package manager & registry format
+    url: https://github.com/AdminServiceCloud/asc-daemon/blob/main/docs/package-manager.md
+    about: Learn the asc.yaml and registry format
+  - name: 🧪 Example apps
+    url: https://github.com/AdminServiceCloud/asc-example-apps
+    about: Manifest templates you can copy

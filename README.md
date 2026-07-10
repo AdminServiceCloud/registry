@@ -1,54 +1,56 @@
-# 📦 registry — официальный реестр приложений AdminService.Cloud
+# 📦 registry — the official AdminService.Cloud application registry
 
-Официальный реестр пакетов для [asc-daemon](../asc-daemon) и магазина приложений [AdminService.Cloud](../asc-platform). Работает как источник пакетов в духе apt: демон подключает реестр и устанавливает приложения командой `asc install <package>`.
+> 🌍 **Language:** English · [🇷🇺 Русская версия](docs/russian/README.md)
 
-## 🗂️ Структура реестра
+The official package registry for [asc-daemon](../asc-daemon) and the [AdminService.Cloud](../asc-platform) app store. It works like an apt source: the daemon connects a registry and installs applications with `asc install <package>`.
 
-Реестр — **иерархия JSON-файлов**: корневой индекс ссылается на файлы категорий, категории могут ссылаться на дочерние подкатегории. Это позволяет разбивать большой реестр на сколько угодно файлов.
+## 🗂️ Registry structure
+
+The registry is a **hierarchy of JSON files**: the root index references category files, and categories may reference child subcategories. This lets a large registry be split across any number of files.
 
 ```
 registry/
-├── registry.json               # 🌳 корневой индекс: метаданные + ссылки на категории
+├── registry.json               # 🌳 root index: metadata + links to categories
 ├── categories/
-│   ├── databases.json          # 🗄️ базы данных
-│   ├── ai.json                 # 🧠 AI-модели и inference
-│   ├── bots.json               # 🤖 боты
-│   ├── game-servers.json       # 🎮 игровые серверы
-│   ├── system-utilities.json   # 🔧 системные утилиты
-│   ├── web.json                # 🌐 веб (ссылается на дочернюю web/cms.json)
+│   ├── databases.json          # 🗄️ databases
+│   ├── ai.json                 # 🧠 AI models & inference
+│   ├── bots.json               # 🤖 bots
+│   ├── game-servers.json       # 🎮 game servers
+│   ├── system-utilities.json   # 🔧 system utilities
+│   ├── web.json                # 🌐 web (references the child web/cms.json)
 │   └── web/
-│       └── cms.json            # 🌐 подкатегория: CMS
+│       └── cms.json            # 🌐 subcategory: CMS
 └── schema/
-    ├── registry.schema.json      # 📐 схема корневого индекса
-    ├── category.schema.json      # 📐 схема файла категории
-    ├── asc.schema.json           # 📐 схема манифеста приложения asc.yaml
-    ├── asc.stack.schema.json     # 📐 схема манифеста стека asc.stack.yaml
-    └── asc.settings.schema.json  # 📐 схема настроек приложения asc.settings.yaml
+    ├── registry.schema.json      # 📐 root index schema
+    ├── category.schema.json      # 📐 category file schema
+    ├── asc.schema.json           # 📐 asc.yaml application manifest schema
+    ├── asc.stack.schema.json     # 📐 asc.stack.yaml stack manifest schema
+    └── asc.settings.schema.json  # 📐 asc.settings.yaml application settings schema
 ```
 
-### 🌳 Иерархия
+### 🌳 Hierarchy
 
-- `registry.json` → список категорий, у каждой — поле `index` со ссылкой на файл категории (относительный путь или URL).
-- Файл категории → пакеты (`packages`) + необязательные дочерние подкатегории (`children` → свои index-файлы).
-- Категории — по темам: `databases`, `ai`, `bots`, `game-servers`, `system-utilities`, `web` и т.д.; новые темы добавляются в `registry.json`.
+- `registry.json` → a list of categories, each with an `index` field linking to the category file (relative path or URL).
+- A category file → packages (`packages`) + optional child subcategories (`children` → their own index files).
+- Categories are by topic: `databases`, `ai`, `bots`, `game-servers`, `system-utilities`, `web`, etc.; new topics are added to `registry.json`.
 
-### 📦 Два типа пакетов
+### 📦 Two package types
 
-| Тип | Манифест | Что это |
+| Type | Manifest | What it is |
 |---|---|---|
-| `app` | `asc.yaml` | Одиночное приложение (docker / native / utility) |
-| `stack` | `asc.stack.yaml` | Стек из нескольких приложений (например, WordPress + MySQL) |
+| `app` | `asc.yaml` | A single application (docker / native / utility) |
+| `stack` | `asc.stack.yaml` | A stack of several applications (e.g. WordPress + MySQL) |
 
-> 🌍 **Важно:** все описания в JSON-файлах реестра — **на английском** (реестр международный). Остальная документация проекта — на русском ([регламент](AGENTS.md)).
+> 🌍 **Important:** all descriptions in the registry's JSON files are in **English** (the registry is international). See the [contribution rules](AGENTS.md).
 
-## ➕ Как добавить пакет
+## ➕ How to add a package
 
-1. 📝 Опишите приложение манифестом `asc.yaml` (или стек — `asc.stack.yaml`) в своём репозитории. Формат — [📦 package-manager](../asc-daemon/docs/package-manager.md), схемы — в [schema/](schema/), примеры — в [asc-example-apps](../asc-example-apps).
-2. ✅ Проверьте манифест по схеме (`asc.schema.json` / `asc.stack.schema.json`).
-3. 📇 Добавьте запись в файл подходящей категории `categories/<тема>.json` (тип `app` или `stack`, описание на английском).
-4. 🔀 Откройте Pull Request — CI проверит все файлы по схемам.
+1. 📝 Describe the application with an `asc.yaml` manifest (or a stack with `asc.stack.yaml`) in your repository. Format — [📦 package-manager](../asc-daemon/docs/package-manager.md), schemas — in [schema/](schema/), examples — in [asc-example-apps](../asc-example-apps).
+2. ✅ Validate the manifest against its schema (`asc.schema.json` / `asc.stack.schema.json`).
+3. 📇 Add an entry to the appropriate category file `categories/<topic>.json` (type `app` or `stack`, description in English).
+4. 🔀 Open a Pull Request — CI validates all files against the schemas.
 
-## 🔌 Подключение реестра
+## 🔌 Connecting the registry
 
 ```bash
 asc source add https://raw.githubusercontent.com/AdminServiceCloud/registry/main
@@ -56,13 +58,13 @@ asc update
 asc search nginx
 ```
 
-Поддерживаются и кастомные реестры: свой `https://`-реестр с таким же `registry.json`, `file://`-каталог или GitHub-репозиторий с `asc.yaml` / `asc.stack.yaml` в корне.
+Custom registries are also supported: your own `https://` registry with the same `registry.json`, a `file://` directory, or a GitHub repository with an `asc.yaml` / `asc.stack.yaml` at its root.
 
-## 📚 Документация и Roadmap
+## 📚 Documentation and roadmap
 
-- [🛍️ Магазин приложений](../asc-platform/docs/features/app-store.md)
-- [📦 Пакетный менеджер и формат реестра](../asc-daemon/docs/package-manager.md)
-- [🎯 ROADMAP](../asc-platform/ROADMAP.md) — задачи реестра имеют префикс `REG-*`
-- [🤖 Регламент репозитория](AGENTS.md)
+- [🛍️ App store](../asc-platform/docs/features/app-store.md)
+- [📦 Package manager and registry format](../asc-daemon/docs/package-manager.md)
+- [🎯 ROADMAP](../asc-platform/ROADMAP.md) — registry tasks use the `REG-*` prefix
+- [🤖 Repository process](AGENTS.md)
 
-> ⚠️ Каталог `old/` — прошлые наработки, используется как справка.
+> ⚠️ The `old/` directory holds earlier work and is kept for reference only.

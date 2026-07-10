@@ -1,0 +1,60 @@
+name: 🐛 Package / registry problem
+description: Report a broken package, invalid entry, or schema issue
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Report a package that is broken, mislabeled, or an entry that fails schema validation.
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Problem type
+      description: What kind of problem is it?
+      options:
+        - Package fails to install
+        - Wrong metadata (description, version, category)
+        - Manifest / schema validation error
+        - Broken or dead link
+        - Duplicate package name
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: package
+    attributes:
+      label: Package name
+      description: Which package is affected?
+      placeholder: e.g. nginx
+
+  - type: input
+    id: file
+    attributes:
+      label: File / location
+      description: Which registry file? (e.g. categories/web.json)
+      placeholder: e.g. categories/databases.json
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What is wrong and what did you expect?
+      placeholder: Describe the problem...
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / validation output
+      description: Error output from install or schema validation, if any
+      render: shell
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Any other information that might be useful

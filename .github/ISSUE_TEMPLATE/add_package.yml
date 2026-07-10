@@ -1,0 +1,85 @@
+name: ➕ Request a package
+description: Request that an application be added to the official registry
+title: "[Package]: "
+labels: ["package-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Want an app in the official registry? Open this request.
+        If you can, submit a Pull Request with the entry directly — see AGENTS.md.
+
+  - type: input
+    id: name
+    attributes:
+      label: Package name
+      description: Proposed unique name (unique across the whole registry)
+      placeholder: e.g. nginx, wordpress-mysql
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What is this application? (English — registry descriptions are international)
+      placeholder: Short English description of the app...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Package type
+      description: A single app or a multi-app stack?
+      options:
+        - app (single asc.yaml)
+        - stack (asc.stack.yaml — multiple apps)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Which category does it belong to?
+      options:
+        - databases
+        - ai
+        - bots
+        - game-servers
+        - system-utilities
+        - web
+        - New category (describe below)
+    validations:
+      required: true
+
+  - type: input
+    id: repo
+    attributes:
+      label: Source repository
+      description: Repo containing the asc.yaml / asc.stack.yaml manifest (if it exists)
+      placeholder: e.g. https://github.com/user/app
+
+  - type: input
+    id: runtime
+    attributes:
+      label: Runtime
+      description: docker / native / utility, or a stack
+      placeholder: e.g. docker
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Willingness to contribute
+      options:
+        - label: I can submit a Pull Request with the manifest and registry entry
+          required: false
+        - label: I am the maintainer of this application
+          required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Links, upstream project, licensing notes, anything useful
