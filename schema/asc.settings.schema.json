@@ -4,8 +4,22 @@
   "title": "ASC Application Settings (asc.settings.yaml)",
   "description": "Application settings definition referenced from asc.yaml via 'settings: ./asc.settings.yaml'. Users fill these values at install time (platform UI renders a form, CLI asks interactively, silent mode uses defaults).",
   "type": "object",
-  "required": ["settings"],
+  "anyOf": [{ "required": ["settings"] }, { "required": ["quota"] }],
   "properties": {
+    "quota": {
+      "type": "object",
+      "description": "Resource quota applied to the app instance at install/upgrade time (max CPU, RAM, disk)",
+      "properties": {
+        "max_cpu": { "type": "number", "exclusiveMinimum": 0, "description": "CPU cores limit, e.g. 0.5 or 2 (Docker: NanoCpus)" },
+        "max_ram": { "type": "string", "pattern": "^[0-9]+(\\.[0-9]+)?\\s*([KMGTkmgt][Bb]?|[KMGTkmgt][Ii][Bb]|[Bb])?$", "description": "Memory limit as a size string, e.g. 512M or 2G (Docker: Memory)" },
+        "max_disk": { "type": "string", "pattern": "^[0-9]+(\\.[0-9]+)?\\s*([KMGTkmgt][Bb]?|[KMGTkmgt][Ii][Bb]|[Bb])?$", "description": "Disk usage limit, e.g. 10G (recorded; per-runtime enforcement is incremental)" }
+      },
+      "additionalProperties": false
+    },
+    "start_command": {
+      "type": "string",
+      "description": "Start command override; supports ${VAR} interpolation from the app environment (applied with DMN-018)"
+    },
     "settings": {
       "type": "array",
       "minItems": 1,
