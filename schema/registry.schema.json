@@ -26,7 +26,7 @@
           "title": { "type": "string", "description": "Human-readable category title" },
           "emoji": { "type": "string", "description": "Category emoji for UI" },
           "description": { "type": "string", "description": "Category description (English)" },
-          "index": { "type": "string", "description": "Relative path or URL to the category index file" }
+          "index": { "type": "string", "description": "Path to the category index file, relative to the registry root (e.g. 'categories/web.json'), or an absolute URL" }
         },
         "additionalProperties": false
       }

@@ -1,0 +1,6 @@
+{
+  "$schema": "../schema/category.schema.json",
+  "category": "bots",
+  "children": [],
+  "packages": []
+}

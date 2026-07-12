@@ -19,7 +19,7 @@
         "properties": {
           "name": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
           "title": { "type": "string" },
-          "index": { "type": "string", "description": "Relative path or URL to the child index file" }
+          "index": { "type": "string", "description": "Path to the child index file, relative to the registry root (e.g. 'categories/web/cms.json'), or an absolute URL" }
         },
         "additionalProperties": false
       }

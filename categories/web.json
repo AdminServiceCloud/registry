@@ -2,7 +2,7 @@
   "$schema": "../schema/category.schema.json",
   "category": "web",
   "children": [
-    { "name": "cms", "title": "CMS", "index": "web/cms.json" }
+    { "name": "cms", "title": "CMS", "index": "categories/web/cms.json" }
   ],
   "packages": [
     {
