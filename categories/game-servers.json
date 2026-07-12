@@ -1,0 +1,19 @@
+{
+  "$schema": "../schema/category.schema.json",
+  "category": "game-servers",
+  "children": [],
+  "packages": [
+    {
+      "name": "cs2",
+      "type": "stack",
+      "title": "Counter-Strike 2 server",
+      "description": "CS2 dedicated server stack: a shared master installation volume (SteamCMD) linked read-only by every game server instance",
+      "latest": "1.0.0",
+      "source": {
+        "git": "https://github.com/AdminServiceCloud/asc-example-apps",
+        "path": "cs2"
+      },
+      "tags": ["cs2", "counter-strike", "steam", "dedicated-server"]
+    }
+  ]
+}

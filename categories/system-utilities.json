@@ -1,0 +1,19 @@
+{
+  "$schema": "../schema/category.schema.json",
+  "category": "system-utilities",
+  "children": [],
+  "packages": [
+    {
+      "name": "nginx-utility",
+      "type": "app",
+      "title": "Nginx (utility)",
+      "description": "Nginx as an on-demand Docker utility: config linting and ad-hoc static serving, no persistent service",
+      "latest": "1.0.0",
+      "source": {
+        "git": "https://github.com/AdminServiceCloud/asc-example-apps",
+        "path": "nginx-utility"
+      },
+      "tags": ["nginx", "utility", "config-lint"]
+    }
+  ]
+}

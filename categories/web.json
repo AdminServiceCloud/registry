@@ -9,13 +9,25 @@
       "name": "nginx",
       "type": "app",
       "title": "Nginx",
-      "description": "High-performance web server and reverse proxy",
-      "latest": "1.27.0",
+      "description": "High-performance web server and reverse proxy, pinned to an upstream release",
+      "latest": "1.28.0",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "nginx"
       },
       "tags": ["web-server", "reverse-proxy"]
+    },
+    {
+      "name": "helloworld",
+      "type": "app",
+      "title": "Hello World",
+      "description": "Minimal Docker application: a tiny web server that responds with Hello World",
+      "latest": "1.0.0",
+      "source": {
+        "git": "https://github.com/AdminServiceCloud/asc-example-apps",
+        "path": "helloworld"
+      },
+      "tags": ["example", "hello-world"]
     }
   ]
 }
