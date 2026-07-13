@@ -1,0 +1,13 @@
+{
+  "name": "asc-registry",
+  "private": true,
+  "type": "module",
+  "description": "Validation tooling for the AdminService.Cloud application registry",
+  "scripts": {
+    "validate": "node scripts/validate.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}
