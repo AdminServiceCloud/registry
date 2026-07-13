@@ -46,7 +46,7 @@
       }
     },
     "ports": { "type": "array", "items": { "type": "integer" }, "description": "Exposed ports" },
-    "volumes": { "type": "array", "items": { "type": "string" }, "description": "Persistent data paths" },
+    "volumes": { "type": "array", "items": { "type": "string" }, "description": "Persistent data: /container/path (private app data) or name:/container/path[:ro] (shared Docker named volume)" },
     "database": {
       "type": "object",
       "description": "Auto-provision a database for this app",
