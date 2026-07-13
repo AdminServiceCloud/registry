@@ -7,8 +7,8 @@
       "name": "cs2",
       "type": "stack",
       "title": "Counter-Strike 2 server",
-      "description": "CS2 dedicated server stack: a shared master installation volume (SteamCMD) linked read-only by every game server instance",
-      "latest": "1.0.0",
+      "description": "CS2 dedicated server: the game installation (~60 GB, downloaded by the image via SteamCMD) lives in the instance's private volume",
+      "latest": "1.1.0",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "cs2"
