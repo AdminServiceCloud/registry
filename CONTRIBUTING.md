@@ -13,13 +13,13 @@ npm install
 npm run validate    # schema + structure checks — mandatory before a PR
 ```
 
-Requirements: Node.js 20+ (only for validation — the registry itself is plain JSON).
+Requirements: Node.js 24+ (only for validation — the registry itself is plain JSON; the validator is TypeScript executed natively by Node).
 
 ## 📦 What you can contribute
 
 - **New packages** — the most common contribution: an entry in a category file pointing to an `asc.yaml` / `asc.stack.yaml` manifest in your repository. Steps — in the [README](README.md#-how-to-add-a-package); there is also an [issue template](https://github.com/AdminServiceCloud/registry/issues/new/choose) to request a package.
 - **New categories / subcategories** — a file in `categories/` plus an `index` link from `registry.json` (or from the parent's `children`).
-- **Schema and tooling fixes** — `schema/`, `scripts/validate.mjs`, CI.
+- **Schema and tooling fixes** — `schema/`, `scripts/validate.ts`, CI.
 
 ## 📏 Registry rules
 
