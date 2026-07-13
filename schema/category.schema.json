@@ -6,6 +6,7 @@
   "type": "object",
   "required": ["category", "packages"],
   "properties": {
+    "$schema": { "type": "string", "description": "Optional reference to this schema for editor tooling" },
     "category": {
       "type": "string",
       "description": "Category path within the registry (e.g. 'web' or 'web/cms')"
