@@ -66,5 +66,8 @@ Custom registries are also supported: your own `https://` registry with the same
 - [📦 Package manager and registry format](../asc-daemon/docs/package-manager.md)
 - [🎯 ROADMAP](../asc-platform/ROADMAP.md) — registry tasks use the `REG-*` prefix
 - [🤖 Repository process](AGENTS.md)
+- [🤝 CONTRIBUTING](CONTRIBUTING.md) — how to contribute (packages, categories, schemas)
+- [🤝 Code of Conduct](CODE_OF_CONDUCT.md)
+- [📄 License — MIT](LICENSE) with mandatory attribution
 
 > ⚠️ The `old/` directory holds earlier work and is kept for reference only.
