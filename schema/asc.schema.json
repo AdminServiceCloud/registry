@@ -22,6 +22,8 @@
       "description": "Runtime definition; fields depend on 'type'",
       "properties": {
         "image": { "type": "string", "description": "Docker image (type: docker)" },
+        "stdin": { "type": "boolean", "default": false, "description": "Keep the container's stdin open (like docker run -i) so console input reaches the app (type: docker)" },
+        "tty": { "type": "boolean", "default": false, "description": "Allocate a pseudo-TTY (like docker run -t) for apps whose console expects a terminal (type: docker)" },
         "install": { "type": "array", "items": { "type": "string" }, "description": "Install commands (type: native/utility)" },
         "start": { "type": "string", "description": "Start command (type: native)" },
         "stop": { "type": "string", "description": "Stop command (type: native)" },
@@ -29,24 +31,8 @@
       },
       "additionalProperties": false
     },
-    "env": {
-      "type": "array",
-      "description": "Environment variables template",
-      "items": {
-        "type": "object",
-        "required": ["name"],
-        "properties": {
-          "name": { "type": "string" },
-          "default": {},
-          "secret": { "type": "boolean", "default": false },
-          "required": { "type": "boolean", "default": false },
-          "description": { "type": "string" }
-        },
-        "additionalProperties": false
-      }
-    },
     "ports": { "type": "array", "items": { "type": "integer" }, "description": "Exposed ports" },
-    "volumes": { "type": "array", "items": { "type": "string" }, "description": "Persistent data: /container/path (private app data) or name:/container/path[:ro] (shared Docker named volume)" },
+    "volumes": { "type": "array", "items": { "type": "string" }, "description": "Persistent data: /container/path (private app data in the app's data folder), /container/path:folder (custom host folder instead of data) or name:/container/path[:ro] (shared Docker named volume). Environment variables are declared in asc.settings.yaml (settings with env:), not here" },
     "database": {
       "type": "object",
       "description": "Auto-provision a database for this app",
