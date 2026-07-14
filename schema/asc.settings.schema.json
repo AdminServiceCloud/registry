@@ -31,7 +31,7 @@
           "type": {
             "type": "string",
             "enum": ["string", "number", "boolean", "enum", "secret", "ports", "volumes"],
-            "description": "Setting type; 'secret' values are stored encrypted and masked in UI/logs; 'ports' is a list of published container ports (with env: the list is exposed comma-joined); 'volumes' is a list of /container/path[:host_folder|:/host/path] or name:/container/path[:ro] entries"
+            "description": "Setting type; 'secret' values are stored encrypted and masked in UI/logs; 'ports' is a list of published container ports (with env: the list is exposed comma-joined; see 'protocol' to choose tcp/udp/both); 'volumes' is a list of /container/path[:host_folder|:/host/path] or name:/container/path[:ro] entries"
           },
           "title": { "type": "string", "description": "Human-readable label (English for public registries)" },
           "description": { "type": "string", "description": "Help text shown next to the field" },
@@ -54,7 +54,12 @@
             },
             "additionalProperties": false
           },
-          "env": { "type": "string", "description": "Environment variable to expose the value as (optional)" }
+          "env": { "type": "string", "description": "Environment variable to expose the value as (optional)" },
+          "protocol": {
+            "type": "string",
+            "enum": ["tcp", "udp", "both"],
+            "description": "Transport(s) to publish on (type: ports only); defaults to 'tcp'. 'both' forwards the same host==container port on TCP and UDP"
+          }
         },
         "additionalProperties": false
       }
