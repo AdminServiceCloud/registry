@@ -16,7 +16,7 @@
     "title": { "type": "string", "description": "Human-readable title" },
     "description": { "type": "string", "description": "Description (English for public registries)" },
     "category": { "type": "string", "description": "Suggested registry category (databases, web, ...)" },
-    "settings": { "type": "string", "description": "Relative path to the app settings file (asc.settings.yaml), see asc.settings.schema.json" },
+    "settings": { "type": "string", "description": "Relative path to the app settings file (asc.settings.yaml), see asc.settings.schema.json. Environment variables, published ports and volumes are all declared there (settings with env:, type: ports, type: volumes), not in this manifest" },
     "runtime": {
       "type": "object",
       "description": "Runtime definition; fields depend on 'type'",
@@ -31,8 +31,6 @@
       },
       "additionalProperties": false
     },
-    "ports": { "type": "array", "items": { "type": "integer" }, "description": "Exposed ports" },
-    "volumes": { "type": "array", "items": { "type": "string" }, "description": "Persistent data: /container/path (private app data in the app's data folder), /container/path:folder (custom host folder instead of data) or name:/container/path[:ro] (shared Docker named volume). Environment variables are declared in asc.settings.yaml (settings with env:), not here" },
     "database": {
       "type": "object",
       "description": "Auto-provision a database for this app",

@@ -30,12 +30,12 @@
           "key": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_]*$", "description": "Setting identifier" },
           "type": {
             "type": "string",
-            "enum": ["string", "number", "boolean", "enum", "secret"],
-            "description": "Setting type; 'secret' values are stored encrypted and masked in UI/logs"
+            "enum": ["string", "number", "boolean", "enum", "secret", "ports", "volumes"],
+            "description": "Setting type; 'secret' values are stored encrypted and masked in UI/logs; 'ports' is a list of published container ports (with env: the list is exposed comma-joined); 'volumes' is a list of /container/path[:host_folder|:/host/path] or name:/container/path[:ro] entries"
           },
           "title": { "type": "string", "description": "Human-readable label (English for public registries)" },
           "description": { "type": "string", "description": "Help text shown next to the field" },
-          "default": { "description": "Default value; required for silent installs unless 'required' is true" },
+          "default": { "description": "Default value; required for silent installs unless 'required' is true. For 'ports' and 'volumes' — a list" },
           "required": { "type": "boolean", "default": false },
           "values": {
             "type": "array",
