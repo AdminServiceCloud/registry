@@ -20,7 +20,7 @@
       "type": "stack",
       "title": "Ollama + Open WebUI",
       "description": "Ollama paired with Open WebUI, a ChatGPT-style chat interface",
-      "latest": "1.0.0",
+      "latest": "1.6.0",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "ai/ollama-openwebui"

@@ -68,7 +68,7 @@
       "type": "stack",
       "title": "PostgreSQL + pgAdmin",
       "description": "PostgreSQL paired with pgAdmin, a web-based administration UI",
-      "latest": "1.0.0",
+      "latest": "1.6.0",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "databases/postgresql-pgadmin"
@@ -80,7 +80,7 @@
       "type": "stack",
       "title": "MySQL + phpMyAdmin",
       "description": "MySQL paired with phpMyAdmin, a web-based administration UI",
-      "latest": "1.0.0",
+      "latest": "1.6.0",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "databases/mysql-phpmyadmin"
@@ -92,7 +92,7 @@
       "type": "stack",
       "title": "MariaDB + phpMyAdmin",
       "description": "MariaDB paired with phpMyAdmin, a web-based administration UI",
-      "latest": "1.0.0",
+      "latest": "1.6.0",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "databases/mariadb-phpmyadmin"
@@ -104,7 +104,7 @@
       "type": "stack",
       "title": "MongoDB + mongo-express",
       "description": "MongoDB paired with mongo-express, a web-based administration UI",
-      "latest": "1.0.0",
+      "latest": "1.6.0",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "databases/mongodb-mongoexpress"
@@ -116,7 +116,7 @@
       "type": "stack",
       "title": "Redis + Redis Commander",
       "description": "Redis paired with Redis Commander, a web-based administration UI",
-      "latest": "1.0.0",
+      "latest": "1.6.0",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "databases/redis-commander"

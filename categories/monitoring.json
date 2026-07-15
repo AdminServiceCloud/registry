@@ -32,7 +32,7 @@
       "type": "app",
       "title": "Server Speedtest",
       "description": "Self-hosted network speed test against this server: download, upload, latency, jitter, packet loss",
-      "latest": "1.0.0",
+      "latest": "1.6.0",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "monitoring/server-speedtest"
