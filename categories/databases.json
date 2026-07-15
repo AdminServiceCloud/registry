@@ -11,9 +11,45 @@
       "latest": "16.3.0",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
-        "path": "postgresql"
+        "path": "databases/postgresql"
       },
       "tags": ["sql", "relational", "database"]
+    },
+    {
+      "name": "mysql",
+      "type": "app",
+      "title": "MySQL",
+      "description": "Widely used open source relational database",
+      "latest": "8.4.0",
+      "source": {
+        "git": "https://github.com/AdminServiceCloud/asc-example-apps",
+        "path": "databases/mysql"
+      },
+      "tags": ["sql", "relational", "database"]
+    },
+    {
+      "name": "mariadb",
+      "type": "app",
+      "title": "MariaDB",
+      "description": "MySQL-compatible open source relational database",
+      "latest": "11.4.0",
+      "source": {
+        "git": "https://github.com/AdminServiceCloud/asc-example-apps",
+        "path": "databases/mariadb"
+      },
+      "tags": ["sql", "relational", "database"]
+    },
+    {
+      "name": "mongodb",
+      "type": "app",
+      "title": "MongoDB",
+      "description": "Document-oriented NoSQL database",
+      "latest": "8.0.0",
+      "source": {
+        "git": "https://github.com/AdminServiceCloud/asc-example-apps",
+        "path": "databases/mongodb"
+      },
+      "tags": ["nosql", "document", "database"]
     },
     {
       "name": "redis",
@@ -23,9 +59,69 @@
       "latest": "7.2.0",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
-        "path": "redis"
+        "path": "databases/redis"
       },
       "tags": ["cache", "key-value", "nosql"]
+    },
+    {
+      "name": "postgresql-pgadmin",
+      "type": "stack",
+      "title": "PostgreSQL + pgAdmin",
+      "description": "PostgreSQL paired with pgAdmin, a web-based administration UI",
+      "latest": "1.0.0",
+      "source": {
+        "git": "https://github.com/AdminServiceCloud/asc-example-apps",
+        "path": "databases/postgresql-pgadmin"
+      },
+      "tags": ["sql", "relational", "database", "admin-ui", "stack"]
+    },
+    {
+      "name": "mysql-phpmyadmin",
+      "type": "stack",
+      "title": "MySQL + phpMyAdmin",
+      "description": "MySQL paired with phpMyAdmin, a web-based administration UI",
+      "latest": "1.0.0",
+      "source": {
+        "git": "https://github.com/AdminServiceCloud/asc-example-apps",
+        "path": "databases/mysql-phpmyadmin"
+      },
+      "tags": ["sql", "relational", "database", "admin-ui", "stack"]
+    },
+    {
+      "name": "mariadb-phpmyadmin",
+      "type": "stack",
+      "title": "MariaDB + phpMyAdmin",
+      "description": "MariaDB paired with phpMyAdmin, a web-based administration UI",
+      "latest": "1.0.0",
+      "source": {
+        "git": "https://github.com/AdminServiceCloud/asc-example-apps",
+        "path": "databases/mariadb-phpmyadmin"
+      },
+      "tags": ["sql", "relational", "database", "admin-ui", "stack"]
+    },
+    {
+      "name": "mongodb-mongoexpress",
+      "type": "stack",
+      "title": "MongoDB + mongo-express",
+      "description": "MongoDB paired with mongo-express, a web-based administration UI",
+      "latest": "1.0.0",
+      "source": {
+        "git": "https://github.com/AdminServiceCloud/asc-example-apps",
+        "path": "databases/mongodb-mongoexpress"
+      },
+      "tags": ["nosql", "document", "database", "admin-ui", "stack"]
+    },
+    {
+      "name": "redis-commander",
+      "type": "stack",
+      "title": "Redis + Redis Commander",
+      "description": "Redis paired with Redis Commander, a web-based administration UI",
+      "latest": "1.0.0",
+      "source": {
+        "git": "https://github.com/AdminServiceCloud/asc-example-apps",
+        "path": "databases/redis-commander"
+      },
+      "tags": ["cache", "key-value", "nosql", "admin-ui", "stack"]
     }
   ]
 }

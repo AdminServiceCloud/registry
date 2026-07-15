@@ -11,7 +11,7 @@
       "latest": "1.6.0",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
-        "path": "cs2"
+        "path": "gameservers/cs2"
       },
       "tags": ["cs2", "counter-strike", "steam", "dedicated-server"]
     },
@@ -23,9 +23,21 @@
       "latest": "1.0.0",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
-        "path": "7dtd"
+        "path": "gameservers/7dtd"
       },
       "tags": ["7dtd", "7-days-to-die", "steam", "dedicated-server", "survival"]
+    },
+    {
+      "name": "gta5",
+      "type": "app",
+      "title": "GTA 5 server (FiveM)",
+      "description": "FiveM dedicated server for GTA V multiplayer, managed through its bundled txAdmin web console",
+      "latest": "1.0.0",
+      "source": {
+        "git": "https://github.com/AdminServiceCloud/asc-example-apps",
+        "path": "gameservers/gta5"
+      },
+      "tags": ["gta5", "fivem", "txadmin", "dedicated-server"]
     }
   ]
 }

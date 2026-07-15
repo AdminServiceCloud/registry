@@ -1,0 +1,43 @@
+{
+  "$schema": "../schema/category.schema.json",
+  "category": "monitoring",
+  "children": [],
+  "packages": [
+    {
+      "name": "uptime-kuma",
+      "type": "app",
+      "title": "Uptime Kuma",
+      "description": "Self-hosted uptime monitoring with notifications and public status pages",
+      "latest": "1.23.16",
+      "source": {
+        "git": "https://github.com/AdminServiceCloud/asc-example-apps",
+        "path": "monitoring/uptime-kuma"
+      },
+      "tags": ["uptime", "monitoring", "status-page"]
+    },
+    {
+      "name": "grafana",
+      "type": "app",
+      "title": "Grafana",
+      "description": "Open source metrics, logs and traces dashboards",
+      "latest": "11.2.0",
+      "source": {
+        "git": "https://github.com/AdminServiceCloud/asc-example-apps",
+        "path": "monitoring/grafana"
+      },
+      "tags": ["dashboards", "metrics", "observability"]
+    },
+    {
+      "name": "server-speedtest",
+      "type": "app",
+      "title": "Server Speedtest",
+      "description": "Self-hosted network speed test against this server: download, upload, latency, jitter, packet loss",
+      "latest": "1.0.0",
+      "source": {
+        "git": "https://github.com/AdminServiceCloud/asc-example-apps",
+        "path": "monitoring/server-speedtest"
+      },
+      "tags": ["network", "speedtest", "diagnostics"]
+    }
+  ]
+}

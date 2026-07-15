@@ -11,7 +11,7 @@
       "latest": "1.0.1",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
-        "path": "nginx-utility"
+        "path": "system-utilities/nginx-utility"
       },
       "tags": ["nginx", "utility", "config-lint"]
     }

@@ -35,6 +35,13 @@
       "index": "categories/game-servers.json"
     },
     {
+      "name": "monitoring",
+      "title": "Monitoring",
+      "emoji": "📈",
+      "description": "Uptime checks, metrics dashboards and network diagnostics",
+      "index": "categories/monitoring.json"
+    },
+    {
       "name": "system-utilities",
       "title": "System Utilities",
       "emoji": "🔧",
