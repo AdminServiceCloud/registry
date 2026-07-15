@@ -8,12 +8,24 @@
       "type": "stack",
       "title": "Counter-Strike 2 server",
       "description": "CS2 dedicated server: the game installation (~60 GB, downloaded by the image via SteamCMD) lives in the instance's private volume",
-      "latest": "1.5.1",
+      "latest": "1.6.0",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "cs2"
       },
       "tags": ["cs2", "counter-strike", "steam", "dedicated-server"]
+    },
+    {
+      "name": "7dtd",
+      "type": "app",
+      "title": "7 Days to Die server",
+      "description": "7 Days to Die dedicated server; the game installation is downloaded on first start into the instance's private volumes",
+      "latest": "1.0.0",
+      "source": {
+        "git": "https://github.com/AdminServiceCloud/asc-example-apps",
+        "path": "7dtd"
+      },
+      "tags": ["7dtd", "7-days-to-die", "steam", "dedicated-server", "survival"]
     }
   ]
 }

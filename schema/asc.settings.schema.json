@@ -42,6 +42,11 @@
             "items": {},
             "description": "Allowed values (type: enum)"
           },
+          "allow_custom": {
+            "type": "boolean",
+            "default": false,
+            "description": "Accept a value outside 'values' as free text (type: enum only), e.g. a custom game branch/world name alongside the common presets"
+          },
           "limits": {
             "type": "object",
             "description": "Value constraints",
