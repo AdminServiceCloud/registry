@@ -31,15 +31,6 @@
       },
       "additionalProperties": false
     },
-    "database": {
-      "type": "object",
-      "description": "Auto-provision a database for this app",
-      "properties": {
-        "engine": { "type": "string", "enum": ["postgresql", "mysql", "mongodb", "redis"] },
-        "env_prefix": { "type": "string", "description": "Prefix for generated credential env vars (e.g. DB_)" }
-      },
-      "additionalProperties": false
-    },
     "requirements": {
       "type": "object",
       "properties": {

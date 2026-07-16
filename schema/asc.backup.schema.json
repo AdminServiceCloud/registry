@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://registry.adminservice.cloud/schema/asc.backup.schema.json",
+  "title": "ASC Backup Exclusions (asc.backup.yaml)",
+  "description": "Optional, at the repository root next to asc.yaml: paths to leave out of an 'asc backup create' archive. Patterns are relative to the installed app directory (e.g. 'data/cache/**', 'repository/vendor') and support '*' (any run of characters within one path segment), '**' (any run, crossing '/') and '?' (one character); excluding a directory excludes everything under it.",
+  "type": "object",
+  "properties": {
+    "exclude": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Glob patterns to exclude from the backup archive"
+    }
+  },
+  "additionalProperties": false
+}
