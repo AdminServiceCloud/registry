@@ -64,6 +64,30 @@
       "tags": ["cache", "key-value", "nosql"]
     },
     {
+      "name": "clickhouse",
+      "type": "app",
+      "title": "ClickHouse",
+      "description": "Yandex-originated open source columnar database for real-time analytics",
+      "latest": "24.6.1",
+      "source": {
+        "git": "https://github.com/AdminServiceCloud/asc-example-apps",
+        "path": "databases/clickhouse"
+      },
+      "tags": ["sql", "olap", "columnar", "analytics", "database", "yandex"]
+    },
+    {
+      "name": "ydb",
+      "type": "app",
+      "title": "YDB",
+      "description": "Yandex open source distributed SQL database with strong consistency",
+      "latest": "24.3.11.13",
+      "source": {
+        "git": "https://github.com/AdminServiceCloud/asc-example-apps",
+        "path": "databases/ydb"
+      },
+      "tags": ["sql", "distributed", "nosql", "database", "yandex"]
+    },
+    {
       "name": "postgresql-pgadmin",
       "type": "stack",
       "title": "PostgreSQL + pgAdmin",
