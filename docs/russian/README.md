@@ -25,7 +25,8 @@ registry/
     ├── category.schema.json      # 📐 схема файла категории
     ├── asc.schema.json           # 📐 схема манифеста приложения asc.yaml
     ├── asc.stack.schema.json     # 📐 схема манифеста стека asc.stack.yaml
-    └── asc.settings.schema.json  # 📐 схема настроек приложения asc.settings.yaml
+    ├── asc.settings.schema.json  # 📐 схема настроек приложения asc.settings.yaml
+    └── asc.backup.schema.json    # 📐 схема исключений бекапа asc.backup.yaml
 ```
 
 ### 🌳 Иерархия

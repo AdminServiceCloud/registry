@@ -25,7 +25,8 @@ registry/
     ├── category.schema.json      # 📐 category file schema
     ├── asc.schema.json           # 📐 asc.yaml application manifest schema
     ├── asc.stack.schema.json     # 📐 asc.stack.yaml stack manifest schema
-    └── asc.settings.schema.json  # 📐 asc.settings.yaml application settings schema
+    ├── asc.settings.schema.json  # 📐 asc.settings.yaml application settings schema
+    └── asc.backup.schema.json    # 📐 asc.backup.yaml backup exclusions schema
 ```
 
 ### 🌳 Hierarchy
