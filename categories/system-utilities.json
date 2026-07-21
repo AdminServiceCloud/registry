@@ -8,7 +8,6 @@
       "type": "app",
       "title": "Nginx (utility)",
       "description": "Nginx as an on-demand Docker utility: config linting and ad-hoc static serving, no persistent service",
-      "latest": "1.6.0",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "system-utilities/nginx-utility"

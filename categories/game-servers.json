@@ -8,7 +8,6 @@
       "type": "stack",
       "title": "Counter-Strike 2 server",
       "description": "CS2 dedicated server: the game installation (~60 GB, downloaded by the image via SteamCMD) lives in the instance's private volume",
-      "latest": "1.6.0",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "gameservers/cs2"
@@ -20,7 +19,6 @@
       "type": "app",
       "title": "7 Days to Die server",
       "description": "7 Days to Die dedicated server; the game installation is downloaded on first start into the instance's private volumes",
-      "latest": "1.6.0",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "gameservers/7dtd"
@@ -32,7 +30,6 @@
       "type": "app",
       "title": "GTA 5 server (FiveM)",
       "description": "FiveM dedicated server for GTA V multiplayer, managed through its bundled txAdmin web console",
-      "latest": "1.6.0",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "gameservers/gta5"

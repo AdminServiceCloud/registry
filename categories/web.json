@@ -10,7 +10,6 @@
       "type": "app",
       "title": "Nginx",
       "description": "High-performance web server and reverse proxy, pinned to an upstream release",
-      "latest": "1.28.2",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "web/nginx"
@@ -22,7 +21,6 @@
       "type": "app",
       "title": "Hello World",
       "description": "Minimal Docker application: a tiny web server that responds with Hello World",
-      "latest": "1.0.2",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "web/helloworld"
@@ -34,7 +32,6 @@
       "type": "app",
       "title": "Caddy",
       "description": "Web server and reverse proxy with automatic HTTPS",
-      "latest": "2.8.4",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "web/caddy"
@@ -46,7 +43,6 @@
       "type": "app",
       "title": "Traefik",
       "description": "Reverse proxy and load balancer",
-      "latest": "3.1.4",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "web/traefik"

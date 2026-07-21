@@ -8,7 +8,6 @@
       "type": "app",
       "title": "Ollama",
       "description": "Local LLM runtime: pull and serve open models over an HTTP API",
-      "latest": "0.5.7",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "ai/ollama"
@@ -20,7 +19,6 @@
       "type": "stack",
       "title": "Ollama + Open WebUI",
       "description": "Ollama paired with Open WebUI, a ChatGPT-style chat interface",
-      "latest": "1.6.0",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "ai/ollama-openwebui"
@@ -32,7 +30,6 @@
       "type": "app",
       "title": "LM Studio",
       "description": "Headless LM Studio (llmster): local LLM runtime with an OpenAI-compatible API",
-      "latest": "0.1.0",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "ai/lm-studio"

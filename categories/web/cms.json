@@ -8,7 +8,6 @@
       "type": "stack",
       "title": "WordPress",
       "description": "WordPress CMS with MySQL database (stack of two apps)",
-      "latest": "6.5.0",
       "source": {
         "git": "https://github.com/AdminServiceCloud/asc-example-apps",
         "path": "wordpress"

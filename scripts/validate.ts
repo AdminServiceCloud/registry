@@ -30,7 +30,6 @@ interface PackageEntry {
   type: "app" | "stack";
   title?: string;
   description: string;
-  latest?: string;
   source: { git?: string; url?: string; path?: string };
   tags?: string[];
 }

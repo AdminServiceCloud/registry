@@ -40,7 +40,6 @@
           },
           "title": { "type": "string", "description": "Human-readable package title" },
           "description": { "type": "string", "description": "Package description (English)" },
-          "latest": { "type": "string", "description": "Latest published version (semver)" },
           "source": {
             "type": "object",
             "description": "Where the package manifest lives",
