@@ -21,7 +21,18 @@
       "type": "object",
       "description": "Runtime definition; fields depend on 'type'",
       "properties": {
-        "image": { "type": "string", "description": "Docker image (type: docker)" },
+        "image": { "type": "string", "description": "Prebuilt Docker image to pull (type: docker). May be given alongside image-build, in which case the installer offers a choice (asc install --image | --build)" },
+        "image-build": {
+          "type": "object",
+          "description": "Build the Docker image locally from a Dockerfile in the package instead of (or beside) pulling a prebuilt 'image' (type: docker)",
+          "properties": {
+            "context": { "type": "string", "description": "Build context directory, relative to the manifest (default '.')" },
+            "dockerfile": { "type": "string", "description": "Dockerfile path, relative to the build context (default 'Dockerfile')" },
+            "args": { "type": "object", "additionalProperties": { "type": "string" }, "description": "Build arguments passed to the Engine (--build-arg)" },
+            "tag": { "type": "string", "description": "Tag for the built image (default 'asc-local/<app>:latest')" }
+          },
+          "additionalProperties": false
+        },
         "stdin": { "type": "boolean", "default": false, "description": "Keep the container's stdin open (like docker run -i) so console input reaches the app (type: docker)" },
         "tty": { "type": "boolean", "default": false, "description": "Allocate a pseudo-TTY (like docker run -t) for apps whose console expects a terminal (type: docker)" },
         "install": { "type": "array", "items": { "type": "string" }, "description": "Install commands (type: native/utility)" },
