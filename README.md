@@ -63,6 +63,7 @@ Custom registries are also supported: your own `https://` registry with the same
 
 ## 📚 Documentation and roadmap
 
+- 🌐 Public docs site: [docs.adminservice.cloud](https://docs.adminservice.cloud) ([GitHub Pages mirror](https://adminservicecloud.github.io/asc-documentaion/))
 - [🛍️ App store](../asc-platform/docs/features/app-store.md)
 - [📦 Package manager and registry format](../asc-daemon/docs/package-manager.md)
 - [🎯 ROADMAP](../asc-platform/ROADMAP.md) — registry tasks use the `REG-*` prefix
