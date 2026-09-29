@@ -79,6 +79,39 @@
         },
         "additionalProperties": false
       }
+    },
+    "setup": {
+      "type": "object",
+      "description": "First-time setup questionnaire (DMN-138): questions the platform asks while the app installs, each about one environment setting from 'settings'. Required questions must be answered before the app's first start; the others can be skipped and set later",
+      "required": ["questions"],
+      "properties": {
+        "title": { "type": "string", "description": "Questionnaire heading (English for public registries)" },
+        "description": { "type": "string", "description": "Text shown above the questions" },
+        "questions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["setting"],
+            "properties": {
+              "setting": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9_]*$",
+                "description": "Key of the setting the question fills in — a string, number, boolean, enum or secret setting declared in 'settings'; asked at most once"
+              },
+              "question": { "type": "string", "description": "The question as the author phrases it; defaults to the setting's title" },
+              "hint": { "type": "string", "description": "A hint under the question; defaults to the setting's description" },
+              "required": {
+                "type": "boolean",
+                "default": false,
+                "description": "true — the app will not start until the question is answered; false — may be skipped and configured later"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false
