@@ -34,7 +34,7 @@ The full rulebook is [AGENTS.md](AGENTS.md); the essentials:
 
 ## 🔀 Change workflow
 
-1. For a new package or category, open an issue first (templates are provided) — it may already be planned; registry tasks live in the [ROADMAP](../asc-platform/ROADMAP.md) under the `REG-*` prefix.
+1. For a new package or category, open an issue first (templates are provided) — it may already be planned.
 2. Fork, create a branch off `main`: `feat/…`, `fix/…`, `docs/…`.
 3. Make the change and run `npm run validate` locally.
 4. Open a Pull Request against `main` using the template. CI must be green.

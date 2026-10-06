@@ -18,7 +18,7 @@
     },
     "start_command": {
       "type": "string",
-      "description": "Start command override; supports ${VAR} interpolation from the app environment (applied with DMN-018)"
+      "description": "Start command override; supports ${VAR} interpolation from the app environment"
     },
     "settings": {
       "type": "array",
@@ -82,7 +82,7 @@
     },
     "setup": {
       "type": "object",
-      "description": "First-time setup questionnaire (DMN-138): questions the platform asks while the app installs, each about one environment setting from 'settings'. Required questions must be answered before the app's first start; the others can be skipped and set later",
+      "description": "First-time setup questionnaire: questions the platform asks while the app installs, each about one environment setting from 'settings'. Required questions must be answered before the app's first start; the others can be skipped and set later",
       "required": ["questions"],
       "properties": {
         "title": { "type": "string", "description": "Questionnaire heading (English for public registries)" },

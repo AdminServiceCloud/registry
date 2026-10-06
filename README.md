@@ -2,7 +2,7 @@
 
 > 🌍 **Language:** English · [🇷🇺 Русская версия](docs/russian/README.md)
 
-The official package registry for [asc-daemon](../asc-daemon) and the [AdminService.Cloud](../asc-platform) app store. It works like an apt source: the daemon connects a registry and installs applications with `asc install <package>`.
+The official package registry for [asc-daemon](../asc-daemon) and the AdminService.Cloud app store. It works like an apt source: the daemon connects a registry and installs applications with `asc install <package>`.
 
 ## 🗂️ Registry structure
 
@@ -61,12 +61,10 @@ asc search nginx
 
 Custom registries are also supported: your own `https://` registry with the same `registry.json`, a `file://` directory, or a GitHub repository with an `asc.yaml` / `asc.stack.yaml` at its root.
 
-## 📚 Documentation and roadmap
+## 📚 Documentation
 
 - 🌐 Public docs site: [docs.adminservice.cloud](https://docs.adminservice.cloud)
-- [🛍️ App store](../asc-platform/docs/features/app-store.md)
 - [📦 Package manager and registry format](../asc-daemon/docs/package-manager.md)
-- [🎯 ROADMAP](../asc-platform/ROADMAP.md) — registry tasks use the `REG-*` prefix
 - [🤖 Repository process](AGENTS.md)
 - [🤝 CONTRIBUTING](CONTRIBUTING.md) — how to contribute (packages, categories, schemas)
 - [🤝 Code of Conduct](CODE_OF_CONDUCT.md)

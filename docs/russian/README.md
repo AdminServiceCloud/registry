@@ -2,7 +2,7 @@
 
 > 🌍 **Язык:** Русский · [🇬🇧 English version](../../README.md)
 
-Официальный реестр пакетов для [asc-daemon](../../../asc-daemon) и магазина приложений [AdminService.Cloud](../../../asc-platform). Работает как источник пакетов в духе apt: демон подключает реестр и устанавливает приложения командой `asc install <package>`.
+Официальный реестр пакетов для [asc-daemon](../../../asc-daemon) и магазина приложений AdminService.Cloud. Работает как источник пакетов в духе apt: демон подключает реестр и устанавливает приложения командой `asc install <package>`.
 
 ## 🗂️ Структура реестра
 
@@ -61,11 +61,9 @@ asc search nginx
 
 Поддерживаются и кастомные реестры: свой `https://`-реестр с таким же `registry.json`, `file://`-каталог или GitHub-репозиторий с `asc.yaml` / `asc.stack.yaml` в корне.
 
-## 📚 Документация и Roadmap
+## 📚 Документация
 
-- [🛍️ Магазин приложений](../../../asc-platform/docs/features/app-store.md)
 - [📦 Пакетный менеджер и формат реестра](../../../asc-daemon/docs/package-manager.md)
-- [🎯 ROADMAP](../../../asc-platform/ROADMAP.md) — задачи реестра имеют префикс `REG-*`
 - [🤖 Регламент репозитория](../../AGENTS.md)
 - [🤝 CONTRIBUTING](CONTRIBUTING.md) — как участвовать (пакеты, категории, схемы)
 - [🤝 Кодекс поведения](CODE_OF_CONDUCT.md)

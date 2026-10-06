@@ -35,9 +35,8 @@ Most PRs add or update a package entry. Keep the PR focused. See AGENTS.md.
 
 ## 🔗 Related
 
-<!-- Roadmap task (REG-*), related issue, or upstream app repo. -->
+<!-- Related issue or upstream app repo. -->
 
-- Roadmap task: REG-
 - Closes #
 
 ## 📌 Notes
